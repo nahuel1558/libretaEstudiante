@@ -1,22 +1,14 @@
 package com.example.demo.model;
 
+import javax.persistence.*;
+
+@Table(name = "carrera")
+@Entity
 public class Carrera {
-    public Long getIdCarrera() {
-        return idCarrera;
-    }
-
-    public void setIdCarrera(Long idCarrera) {
-        this.idCarrera = idCarrera;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
     private Long idCarrera;
     private String nombre;
-        }
+}
+

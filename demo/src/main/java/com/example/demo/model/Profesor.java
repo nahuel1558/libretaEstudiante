@@ -1,8 +1,19 @@
 package com.example.demo.model;
 
+import javax.persistence.*;
+
+@Table(name = "profesor")
+@Entity
 public class Profesor {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long idProfesor;
     private Long persona;
+
+    public Profesor(Long idProfesor, Long persona) {
+        this.idProfesor = idProfesor;
+        this.persona = persona;
+    }
 
     public Long getIdProfesor() {
         return idProfesor;

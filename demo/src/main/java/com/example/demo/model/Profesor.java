@@ -1,33 +1,22 @@
 package com.example.demo.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 
 @Table(name = "profesor")
 @Entity
+@Getter
+@Setter
+
 public class Profesor {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
     private Long idProfesor;
-    private Long persona;
 
-    public Profesor(Long idProfesor, Long persona) {
-        this.idProfesor = idProfesor;
-        this.persona = persona;
-    }
+    private Long idPersona;
 
-    public Long getIdProfesor() {
-        return idProfesor;
-    }
-
-    public void setIdProfesor(Long idProfesor) {
-        this.idProfesor = idProfesor;
-    }
-
-    public Long getPersona() {
-        return persona;
-    }
-
-    public void setPersona(Long persona) {
-        this.persona = persona;
-    }
 }
